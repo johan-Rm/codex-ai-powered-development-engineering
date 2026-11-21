@@ -1,0 +1,10 @@
+/*
+!/.gitignore
+!/README.md
+!/skills/
+/skills/*
+!/skills/ai-development-engineering-*/
+!/skills/references/
+!/prompts/
+/prompts/*
+!/prompts/ai-development-engineering-*.md
