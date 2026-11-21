@@ -70,3 +70,7 @@ Prévoir une rubrique pour les tâches issues du découpage ; cette étape ajout
 ## Arrêt
 
 En cas de **besoin contradictoire** ou de **décision nécessaire absente**, garder les questions ouvertes et ne pas présenter la demande comme prête.
+
+## Prochaine étape
+
+Une fois le cadrage confirmé et documenté, l’étape **02 Analyse / découpage** peut être engagée avec le prompt `ai-development-engineering-analyser-decouper-demande`, sur instruction explicite et sans enchaînement automatique.

@@ -14,11 +14,17 @@ Prêter une attention particulière à la **qualité des réponses** et aux règ
 
 ## Entrée
 
-Consolidation analysée et découpée, décisions de règle confirmées, cartes identifiées, branches et worktrees affectés. Une demande entière confie toutes ses cartes ; une carte seule limite le périmètre.
+Fournir le **numéro de demande `DEM-*`**. Vérifier que la demande existe, que son type est **consolidation** et qu’elle est analysée et découpée, avec ses décisions de règle confirmées, cartes, branches et worktrees affectés. Si le type ne correspond pas ou ne peut pas être établi, arrêter et signaler le problème.
+
+Par défaut, implémenter **toutes les tâches de la demande**, avec un commit local par tâche terminée au fur et à mesure. Une instruction explicite peut limiter le périmètre à certaines cartes.
+
+Si une couche est occupée par une autre mission, préserver son travail, signaler les tâches bloquées et poursuivre celles qui restent réalisables indépendamment.
 
 ## Contexte et conventions du projet
 
-Lire les instructions du projet, la demande, ses cartes et les README applicables. Les instructions explicites de l’utilisateur priment. Résoudre les chemins, couches, branches et commandes depuis le projet ; annoncer les worktrees absolus utilisés.
+Lire les instructions du projet, la demande et ses cartes. Dans l’architecture du projet, les README présents à la racine et dans les sous-dossiers, notamment sous `webapp/base/**/*`, définissent les **rôles, responsabilités et conventions techniques** de leurs périmètres. Lire ceux qui existent de la racine jusqu’aux dossiers concernés, sans parcourir les autres dossiers.
+
+Les instructions explicites de l’utilisateur priment. Résoudre les chemins, couches, branches et commandes depuis le projet ; annoncer les worktrees absolus utilisés.
 
 Préserver les modifications étrangères, les données et les `.env`. Aucun stash, reset --hard, force-push ou rebase de branche occupée. **Ne pas déléguer sans autorisation.**
 
@@ -73,3 +79,7 @@ La vérification humaine porte alors sur la demande complète, sauf périmètre 
 ## Arrêt
 
 **Situation bloquante :** Travail étranger, couche occupée, dépendance intersession sans commit disponible, échec de contrôle, besoin de changement du cadre ou dépassement de périmètre : préserver le travail, signaler le blocage réel et poursuivre les autres tâches indépendantes.
+
+## Prochaine étape
+
+Une fois l’implémentation prête, l’étape **04 Vérification / arbitrage** permet à l’humain d’examiner la consolidation et de donner son verdict. Utiliser le prompt `ai-development-engineering-verifier-arbitrer-consolidation` sur instruction explicite, sans l’enchaîner automatiquement.

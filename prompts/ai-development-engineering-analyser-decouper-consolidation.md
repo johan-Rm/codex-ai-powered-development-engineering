@@ -51,3 +51,7 @@ Appliquer le skill `ai-development-engineering-preparer-cartes` pour préparer t
 ## Arrêt
 
 **Situation bloquante :** Zone essentielle inaccessible ou périmètre inconnu : signaler la couverture incomplète avant arbitrage.
+
+## Prochaine étape
+
+Une fois l’analyse et les cartes prêtes, l’étape **03 Implémentation** peut être engagée avec le prompt `ai-development-engineering-implementer-consolidation`, sur instruction explicite et sans enchaînement automatique.

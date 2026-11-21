@@ -59,3 +59,7 @@ Après confirmation, appliquer le skill `ai-development-engineering-documenter-d
 ## Arrêt
 
 En cas de **constat invérifiable** ou d’**intention ambiguë**, préciser les informations manquantes sans inventer de règle.
+
+## Prochaine étape
+
+Une fois le cadrage confirmé et documenté, l’étape **02 Analyse / découpage** peut être engagée avec le prompt `ai-development-engineering-analyser-decouper-consolidation`, sur instruction explicite et sans enchaînement automatique.

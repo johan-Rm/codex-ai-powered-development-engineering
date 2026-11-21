@@ -61,3 +61,7 @@ Après intégration distante vérifiée, appliquer le skill `ai-development-engi
 ## Arrêt
 
 **Situation bloquante :** Carte non validée, occurrence oubliée, contrôle requis inconnu ou échoué : ne pas ouvrir de PR et exposer le travail restant.
+
+## Fin de la boucle
+
+La livraison termine la boucle lorsque ses conditions de clôture sont satisfaites. Une livraison limitée à la PR ou un suivi bloqué reste à poursuivre ; ne pas annoncer la boucle terminée prématurément.

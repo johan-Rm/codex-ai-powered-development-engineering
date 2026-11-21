@@ -43,3 +43,7 @@ Réaliser le découpage en autonomie ; questionner seulement une décision de be
 ## Arrêt
 
 **Situation bloquante :** Couche occupée, identifiant ambigu ou dépendance de réalisation sans commit : signaler les missions non prêtes sans copier le travail non commité.
+
+## Prochaine étape
+
+Une fois l’analyse et les cartes prêtes, l’étape **03 Implémentation** peut être engagée avec le prompt `ai-development-engineering-implementer-demande`, sur instruction explicite et sans enchaînement automatique.

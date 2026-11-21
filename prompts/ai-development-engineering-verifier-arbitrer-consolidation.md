@@ -49,3 +49,7 @@ Une correction retourne à l’implémentation, puis à une nouvelle vérificati
 ## Arrêt
 
 **Situation bloquante :** Preuve manquante, verdict absent, contenu différent des commits présentés ou périmètre ambigu : préserver le travail et signaler les points à résoudre sans inventer de validation.
+
+## Prochaine étape
+
+Une fois les cartes nécessaires validées, l’étape **05 Reconstitution** peut être engagée avec le prompt `ai-development-engineering-reconstituer-consolidation`, sur instruction explicite et sans enchaînement automatique.

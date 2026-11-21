@@ -41,3 +41,7 @@ Un conflit qui change le résultat validé demande une décision humaine ; ne pa
 ## Arrêt
 
 **Situation bloquante :** Carte non validée, commit manquant, dossier sale ou occupé, branche étrangère ou conflit hors du résultat validé : préserver le travail et exposer le blocage.
+
+## Prochaine étape
+
+Une fois la demande reconstituée et vérifiée, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-consolidation`, sur instruction explicite et sans enchaînement automatique.

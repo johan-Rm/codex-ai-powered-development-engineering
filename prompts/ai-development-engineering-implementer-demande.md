@@ -12,13 +12,21 @@ Consulter également la **documentation pertinente du dossier `docs/`** du proje
 
 Prêter une attention particulière à la **qualité des réponses** et aux règles encadrant les **exécutions lourdes**, notamment les tests.
 
+**Ne jamais écrire ni modifier de code dans Codebase Integrity pendant l’implémentation d’une demande de développement.** Toute évolution de ce cadre relève d’une demande de consolidation.
+
 ## Entrée
 
-Demande cadrée et découpée, cartes identifiées, branches et worktrees affectés. Une demande entière confie toutes ses cartes ; une carte seule limite le périmètre.
+Fournir le **numéro de demande `DEM-*`**. Vérifier que la demande existe, que son type est **développement** et qu’elle est cadrée et découpée, avec ses cartes, branches et worktrees affectés. Si le type ne correspond pas ou ne peut pas être établi, arrêter et signaler le problème.
+
+Par défaut, implémenter **toutes les tâches de la demande**, avec un commit local par tâche terminée au fur et à mesure. Une instruction explicite peut limiter le périmètre à certaines cartes.
+
+Si une couche est occupée par une autre mission, préserver son travail, signaler les tâches bloquées et poursuivre celles qui restent réalisables indépendamment.
 
 ## Contexte et conventions du projet
 
-Lire les instructions du projet, la demande, ses cartes et les README applicables. Les instructions explicites de l’utilisateur priment. Résoudre les chemins, couches, branches et commandes depuis le projet ; annoncer les worktrees absolus utilisés.
+Lire les instructions du projet, la demande et ses cartes. Dans l’architecture du projet, les README présents à la racine et dans les sous-dossiers, notamment sous `webapp/base/**/*`, définissent les **rôles, responsabilités et conventions techniques** de leurs périmètres. Lire ceux qui existent de la racine jusqu’aux dossiers concernés, sans parcourir les autres dossiers.
+
+Les instructions explicites de l’utilisateur priment. Résoudre les chemins, couches, branches et commandes depuis le projet ; annoncer les worktrees absolus utilisés.
 
 Préserver les modifications étrangères, les données et les `.env`. Aucun stash, reset --hard, force-push ou rebase de branche occupée. **Ne pas déléguer sans autorisation.**
 
@@ -48,7 +56,7 @@ Entre sessions ou agents, une dépendance de réalisation bloque son consommateu
 
 Pour intégrer les commits nécessaires dans une couche affectée, appliquer le skill `ai-development-engineering-integrer-dependances` selon les autorisations du projet. Les contrôles d’ensemble peuvent attendre la réunion des commits sans bloquer les changements indépendants.
 
-Réaliser le périmètre confié avec ses tests et sa documentation. Ne pas modifier les conventions, Codebase Integrity, seuils ou exceptions pour faire passer un contrôle.
+Réaliser le périmètre confié avec ses tests et sa documentation. Ne pas modifier les conventions, seuils ou exceptions pour faire passer un contrôle.
 
 Lorsque la tâche affecte `docs/`, appliquer le skill `ai-development-engineering-documenter-projet` pour préparer un brouillon versionné dans le commit de la tâche ; l’intégration dans `docs/` intervient à la reconstitution.
 
@@ -71,3 +79,7 @@ La vérification humaine porte alors sur la demande complète, sauf périmètre 
 ## Arrêt
 
 **Situation bloquante :** Travail étranger, couche occupée, dépendance intersession sans commit disponible, échec de contrôle, besoin de changement du cadre ou dépassement de périmètre : préserver le travail, signaler le blocage réel et poursuivre les autres tâches indépendantes.
+
+## Prochaine étape
+
+Une fois l’implémentation prête, l’étape **04 Vérification / arbitrage** permet à l’humain d’examiner la demande et de donner son verdict. Utiliser le prompt `ai-development-engineering-verifier-arbitrer-demande` sur instruction explicite, sans l’enchaîner automatiquement.

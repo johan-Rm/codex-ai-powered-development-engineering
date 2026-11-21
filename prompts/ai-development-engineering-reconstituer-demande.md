@@ -55,3 +55,7 @@ Aucune délégation, push, PR, fusion de livraison ou étape suivante automatiqu
 ## Arrêt
 
 **Situation bloquante :** Carte non validée, commit absent, worktree sale ou occupé, branche étrangère ou conflit hors du résultat validé : préserver le travail et signaler le blocage.
+
+## Prochaine étape
+
+Une fois la demande reconstituée et vérifiée, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-demande`, sur instruction explicite et sans enchaînement automatique.
