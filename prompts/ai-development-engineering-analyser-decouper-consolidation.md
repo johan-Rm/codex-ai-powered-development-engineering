@@ -31,7 +31,7 @@ les copies de worktrees comme des occurrences supplémentaires. Relever fichiers
 Rechercher les contrôles existants, leur portée et leurs angles morts. Proposer les corrections et un
 contrôle déterministe avec cas conformes, écarts détectables et exceptions ; distinguer règle documentée
 et règle déjà contrôlée. Comparer les options et leurs coûts, niveaux bloquants et impacts par couche.
-Documenter l’analyse dans le dossier de la demande sans modifier code, contrôles ou conventions.
+Documenter l’analyse dans le brouillon `tmp/demande-<sujet>.md` du dépôt principal, sans modifier code, contrôles ou conventions.
 Un état Git ou un échantillon ne prouve pas une analyse globale ; expliciter toute zone inaccessible.
 
 ### Confirmer puis découper
@@ -42,14 +42,7 @@ les exceptions et contrôles nécessaires à l’implémentation ; consigner exa
 la décision. Une décision déjà explicite reste acquise. Le silence ne vaut pas accord.
 Sans décision suffisante, conserver la proposition en attente, sans code ni contrôle modifié.
 
-Préparer toutes les cartes selon les couches du projet : objectifs, chemins,
-exclusions, branches et worktrees, dépendances réelles par commits, critères,
-tests proportionnés, documentation et preuves. Vérifier les identifiants dans les
-références locales et les worktrees ; utiliser la session réelle de création.
-Ne pas inventer de dépendance de code pour une édition documentaire partagée :
-organiser les responsabilités dans une mission cohérente selon le routage autorisé.
-Prévoir la branche de demande et le dossier principal pour l’étape 05.
-Ne pas implémenter, committer, pousser ni appeler l’étape suivante.
+Appliquer le skill `ai-development-engineering-preparer-cartes` pour préparer toutes les cartes, leur matrice, les dépendances et les branches des couches affectées selon les autorisations du projet. Ne pas implémenter, committer, pousser ni appeler l’étape suivante.
 
 ## Sortie et preuve
 

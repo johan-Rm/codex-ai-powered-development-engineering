@@ -43,11 +43,7 @@ présentées. Ne déduire aucun verdict du silence, des tests ou de l’invocati
 
 ## Après le verdict
 
-Associer fidèlement le verdict aux cartes et SHA examinés dans leurs traces et le
-brouillon. Ne pas recréer les commits d’implémentation ni demander leur autorisation
-à nouveau. Les seuls commits de cette étape sont les traces documentaires du verdict,
-sur branches de mission et avec index limité aux fichiers concernés. Pour préparer et
-créer ces commits autorisés, appliquer le skill `ai-development-engineering-commit`.
+Après verdict explicite, appliquer le skill `ai-development-engineering-tracer-verdict` pour le rattacher aux cartes et commits examinés et créer les seules traces documentaires autorisées.
 
 Une correction retourne à l’implémentation, puis à une nouvelle vérification ;
 un changement de besoin retourne à l’analyse. Ne pas coder durant la vérification.

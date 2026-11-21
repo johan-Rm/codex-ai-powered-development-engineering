@@ -50,15 +50,11 @@ attendre de validation humaine intermédiaire. Une tâche correspond à un commi
 initial ; ne pas regrouper plusieurs tâches dans le même commit. Ne pas inventer
 une attente entre deux tâches que cette session peut traiter successivement.
 
-Entre sessions ou agents, une dépendance de réalisation bloque son consommateur
-tant que le commit amont identifié n’est pas disponible. Ne pas copier du travail
-non commité depuis une autre mission ou utiliser sa couche occupée. Un commit
-amont disponible peut être intégré selon le workflow autorisé, sans déplacer la
-mission ni réécrire de branche partagée. Les contrôles d’ensemble peuvent attendre
-la réunion des commits sans bloquer les changements indépendants.
+Entre sessions ou agents, une dépendance de réalisation bloque son consommateur tant que le commit amont identifié n’est pas disponible. Pour intégrer les commits nécessaires dans une couche affectée, appliquer le skill `ai-development-engineering-integrer-dependances` selon les autorisations du projet. Les contrôles d’ensemble peuvent attendre la réunion des commits sans bloquer les changements indépendants.
 
 Réaliser le périmètre confié avec ses tests et sa documentation. Ne pas modifier
 les conventions, Codebase Integrity, seuils ou exceptions pour faire passer un contrôle.
+Lorsque la tâche affecte `docs/`, appliquer le skill `ai-development-engineering-documenter-projet` pour préparer un brouillon versionné dans le commit de la tâche ; l’intégration dans `docs/` intervient à la reconstitution.
 Faire réaliser les contrôles proportionnés selon la règle commune ; consigner les
 commandes, observations et limites dans la carte. Pour préparer et créer chaque commit
 autorisé, appliquer le skill `ai-development-engineering-commit`.

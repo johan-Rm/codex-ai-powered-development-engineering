@@ -36,24 +36,11 @@ Ne pas modifier directement develop ou production. Une branche existante n’est
 pas déplacée : vérifier sa provenance et reprendre seulement la même demande.
 Noter develop comme branche à retrouver dans le principal après fusion distante.
 
-Appliquer les seuls commits validés avec `git cherry-pick -x <sha>`, dans l’ordre.
-Ne pas merger les branches de couche pour reconstituer la demande, ni copier des
-fichiers non commités. Garder la provenance source → commit obtenu dans la demande
-ou les cartes, sans rapport séparé. Avant une reprise, vérifier les cherry-picks
-déjà présents par leur provenance et contenu pour ne pas les appliquer deux fois.
-Les SHA obtenus peuvent différer des SHA sources validés.
+Appliquer le skill `ai-development-engineering-appliquer-commits-valides` pour reprendre les seuls commits validés et leurs traces sur la branche de demande.
 
-Après les cherry-picks, matérialiser le brouillon `tmp/demande-<sujet>.md` du
-principal dans `dev-book/demand/DEM-NNN-<sujet>.md` sur la branche de demande.
-Conserver l’identité, la session d’origine et les sessions intervenantes, le
-cadrage confirmé, les décisions, verdicts et références de commits. Adapter
-les liens vers les cartes à cet emplacement et consigner les SHA source → obtenu.
-S’il existe déjà un document définitif de cette demande, le reprendre sans doublon.
-Le brouillon local n’est pas une contribution de code non commitée d’une autre
-mission : seule cette matérialisation documentaire explicitement prévue est permise.
-Conserver le brouillon et ne pas créer de rapport séparé. Les cartes sont déjà
-versionnées par leurs commits validés. Le document définitif et les traces de
-reconstitution peuvent rester non commités pour le commit documentaire de livraison.
+Lorsque la demande affecte `docs/`, appliquer après les cherry-picks le skill `ai-development-engineering-documenter-projet` pour intégrer les brouillons documentaires validés.
+
+Après les cherry-picks, appliquer le skill `ai-development-engineering-materialiser-demande` pour créer ou reprendre le document définitif à partir du brouillon confirmé.
 
 Vérifier le diff final, les liens et les contrôles pertinents. Un conflit se résout
 uniquement dans le périmètre validé ; si sa résolution change le comportement,

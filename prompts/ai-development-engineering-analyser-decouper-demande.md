@@ -31,40 +31,7 @@ Analyser le besoin, les impacts et les conventions applicables avant de découpe
 Comparer les options utiles et faire confirmer les décisions de besoin encore ouvertes,
 sans redemander celles déjà explicites. La sortie couvre toutes les cartes de la demande.
 
-Dans AIDE, lire le brouillon `tmp/demande-<sujet>.md` depuis la racine du dépôt
-principal ; la demande définitive n’existe pas encore. Mettre à jour ce brouillon
-avec la matrice des cartes, sans le copier dans un worktree. Les cartes restent
-versionnées dans dev-book/tasks/ de leur couche. Chaque carte identifie le brouillon
-par son chemin relatif au dépôt principal et prévoit le lien vers la demande
-définitive ; ne pas présenter ce lien futur comme un fichier existant.
-
-Répartir les responsabilités selon le routage du projet, sans inventer de couche. Pour chaque carte,
-fixer objectif, exclusions, chemins autorisés, critères, tests proportionnés, documentation, preuve,
-worktree relatif au dépôt principal et branche ; annoncer le chemin absolu résolu dans le chat.
-Distinguer les dépendances de réalisation des dépendances de vérification globale.
-Seules les premières bloquent l’implémentation : identifier les commits nécessaires ;
-une tâche amont sans commit reste à résoudre avant son consommateur.
-Prévoir les contrôles d’ensemble après réunion des commits sans bloquer les changements indépendants. Vérifier la complétude par rapport à la demande.
-Attribuer les identifiants depuis l’historique de toutes les références locales et les fichiers des
-worktrees concernés, sans fetch implicite. Renseigner dans chaque carte l’identifiant réel de la session de création, issu du contexte
-ou d’une source locale fiable (par exemple CODEX_THREAD_ID ou CODEX_SESSION_ID). Son absence
-ou une contradiction entre sources bloque la création : signaler le problème sans inventer
-d’identifiant ni écrire une mention d’indisponibilité. Une reprise conserve l’identifiant
-d’origine et ajoute celui de la session intervenante.
-Réaliser le découpage en autonomie ; questionner seulement une décision de besoin manquante.
-Prévoir la branche `demands/<identifiant>`, créée à la reconstitution depuis develop
-local vérifié dans le dossier principal du dépôt (worktree relatif `.`). Les
-worktrees de couche conservent layers/* pour les missions ; ne pas y placer la
-branche finale d’une nouvelle demande. Le dossier principal doit être libre et
-propre à la reconstitution ; s’il est occupé par une autre demande, annoncer
-l’attente sans déplacer cette mission. Prévoir le retour du principal sur develop
-après fusion distante, sans contribution directe sur develop. Ne créer la branche
-de demande qu’à la reconstitution. Aucune copie ou dossier de réunion supplémentaire.
-La branche dédiée reste distincte de develop et de production, même pour une couche.
-Préparer les branches dans les worktrees affectés,
-après vérification des missions actives ; conserver une branche existante sans rebase implicite.
-Une base locale explicite suffit si le projet le prévoit ; ne pas annoncer de synchronisation distante.
-Ne pas implémenter les cartes.
+Appliquer le skill `ai-development-engineering-preparer-cartes` pour préparer toutes les cartes, leur matrice, les dépendances et les branches des couches affectées selon les autorisations du projet. Réaliser le découpage en autonomie ; questionner seulement une décision de besoin manquante. Ne pas implémenter les cartes.
 
 ## Sortie et preuve
 

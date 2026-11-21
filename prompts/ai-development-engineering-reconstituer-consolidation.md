@@ -23,15 +23,11 @@ Vérifier la disponibilité, la branche, l’index et tous les fichiers non suiv
 dossier principal. Préserver les .env, données, fichiers locaux et worktrees.
 Ne pas déplacer une mission étrangère ni utiliser stash, reset destructif ou force-push.
 
-L’invocation autorise la création de `demands/<identifiant>` depuis le develop local
-vérifié, dans le dossier principal libre et propre, puis les cherry-picks `-x` des
-seuls commits validés. Les couches conservent leurs branches. Une reprise vérifie
-provenance et contenu des commits déjà réunis pour ne pas les rejouer.
-Ne pas merger les branches de couche ni copier du travail non commité.
+L’invocation autorise la création de `demands/<identifiant>` depuis le develop local vérifié, dans le dossier principal libre et propre. Les couches conservent leurs branches. Appliquer le skill `ai-development-engineering-appliquer-commits-valides` pour reprendre les seuls commits validés et leurs traces.
 
-Consigner la correspondance source → obtenu dans la demande ou les cartes ;
-préserver les identifiants et sessions réels. Reprendre le document existant sans
-doublon ; matérialiser un brouillon confirmé seulement si le projet le prévoit.
+Lorsque la demande affecte `docs/`, appliquer après les cherry-picks le skill `ai-development-engineering-documenter-projet` pour intégrer les brouillons documentaires validés.
+
+Après les cherry-picks, appliquer le skill `ai-development-engineering-materialiser-demande` pour créer ou reprendre le document définitif à partir du brouillon confirmé.
 Vérifier le diff, les liens et les contrôles. Un conflit qui change le résultat
 validé demande une décision humaine ; ne pas valider une différence par déduction.
 Aucun nouveau développement, push, PR, fusion de livraison ou étape suivante automatique.

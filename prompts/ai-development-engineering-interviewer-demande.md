@@ -28,7 +28,9 @@ Ne pas déléguer sans autorisation. Ne pas enchaîner automatiquement une autre
 
 ## Procédure
 
-Appliquer le skill `ai-development-engineering-interviewer` pour conduire l’interview et obtenir la confirmation du cadrage.
+Lire les décisions existantes et distinguer faits, hypothèses, propositions et questions ouvertes. Ne pas redemander une décision déjà prise ni présenter une proposition comme approuvée.
+
+Conduire l’échange avec `request_user_input_async`, ou `request_user_input` si le mode actif l’autorise. Sans outil interactif disponible, signaler la limite et garder l’interview en attente. Poser une question à la fois, avec des choix concrets et une réponse libre lorsque cela aide ; attendre la réponse avant la suivante. Une option présélectionnée ou le temps écoulé ne constituent pas une réponse.
 
 Examiner le problème et sa motivation, les utilisateurs et usages, le périmètre et les exclusions,
 le comportement attendu, les contraintes, les cas limites, les critères d’acceptation,
@@ -37,6 +39,8 @@ utiles au résultat, même pour une demande présentée comme simple ; éviter l
 ou sans incidence. Pour chaque dimension, s’appuyer sur une réponse humaine, une décision existante
 ou une justification de son absence de pertinence. Garder visibles les questions non résolues.
 
+Après avoir exploré ces sujets, restituer les décisions, exclusions, critères observables et points ouverts. Demander la confirmation explicite dans le chat, sans formulaire interactif, et attendre la réponse avant de documenter le cadrage. Une correction rouvre les questions concernées ; une décision nécessaire absente empêche de considérer le cadrage confirmé. Le silence ne vaut pas confirmation.
+
 ### Documentation du cadrage
 
 Après confirmation, appliquer le skill `ai-development-engineering-documenter-demande` pour rechercher ou créer le brouillon.
@@ -44,7 +48,7 @@ Après confirmation, appliquer le skill `ai-development-engineering-documenter-d
 Le fichier fait référence pour le besoin, le contexte, les utilisateurs concernés, les critères
 observables, les contraintes, les exclusions, les questions ouvertes et les décisions humaines.
 Conserver l’identifiant, le titre, la date, l’état du cadrage et sa confirmation humaine.
-Le chat sert à construire et préciser la demande. Le lien vers le chat est facultatif et distinct de cet identifiant obligatoire.
+Le chat sert à construire et préciser la demande. Son lien est facultatif et distinct de l’identifiant de session obligatoire.
 Une carte externe de suivi est facultative. Conserver son lien ne nécessite aucune connexion ;
 la créer ou la modifier requiert une instruction explicite. L’absence de lien vers le chat
 ou de carte externe n’empêche pas le cadrage ; l’identifiant de session reste obligatoire. Prévoir une rubrique pour les tâches issues du découpage ; cette étape

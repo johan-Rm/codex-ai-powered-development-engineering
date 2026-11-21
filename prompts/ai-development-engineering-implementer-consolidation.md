@@ -50,19 +50,11 @@ attendre de validation humaine intermédiaire. Une tâche correspond à un commi
 initial ; ne pas regrouper plusieurs tâches dans le même commit. Ne pas inventer
 une attente entre deux tâches que cette session peut traiter successivement.
 
-Entre sessions ou agents, une dépendance de réalisation bloque son consommateur
-tant que le commit amont identifié n’est pas disponible. Ne pas copier du travail
-non commité depuis une autre mission ou utiliser sa couche occupée. Un commit
-amont disponible peut être intégré localement dans une couche affectée, libre et propre :
-avance rapide si possible, sinon cherry-pick des seuls commits nécessaires avec traçabilité.
-Ne pas déplacer une mission, intégrer une branche entière sans vérifier son périmètre,
-ni réécrire une branche partagée. Une couche occupée par des changements identifiés
-de cette même demande poursuit ses tâches locales sans nettoyage ; ne pas y intégrer
-de commit amont avant d’avoir isolé et commité ses tâches terminées. Les contrôles d’ensemble peuvent attendre
-la réunion des commits sans bloquer les changements indépendants.
+Entre sessions ou agents, une dépendance de réalisation bloque son consommateur tant que le commit amont identifié n’est pas disponible. Pour intégrer les commits nécessaires dans une couche affectée, appliquer le skill `ai-development-engineering-integrer-dependances` selon les autorisations du projet. Les contrôles d’ensemble peuvent attendre la réunion des commits sans bloquer les changements indépendants.
 
 Réaliser le périmètre confié avec ses corrections, contrôles, tests et documentation. Ne pas modifier
 une convention, un seuil ou une exception au-delà des arbitrages confirmés à l’étape 02 pour faire passer un contrôle. Documenter les règles au README responsable et tester les contrôles sur cas conformes, écarts et exceptions ; une décision de règle manquante retourne à l’étape 02.
+Lorsque la tâche affecte `docs/`, appliquer le skill `ai-development-engineering-documenter-projet` pour préparer un brouillon versionné dans le commit de la tâche ; l’intégration dans `docs/` intervient à la reconstitution.
 Faire réaliser les contrôles proportionnés selon la règle commune ; consigner les
 commandes, observations et limites dans la carte. Pour préparer et créer chaque commit
 autorisé, appliquer le skill `ai-development-engineering-commit`.
