@@ -24,7 +24,9 @@ Rester concis et renvoyer aux décisions existantes sans les recopier.
 
 Vérifier la disponibilité, la branche, l’index et tous les fichiers non suivis du dossier principal. Préserver les .env, données, fichiers locaux et worktrees. Ne pas déplacer une mission étrangère ni utiliser stash, reset destructif ou force-push.
 
-L’invocation autorise la création de `demands/<identifiant>` depuis le develop local vérifié, dans le dossier principal libre et propre. Les couches conservent leurs branches.
+Pour une nouvelle reconstitution, reprendre le nom fixé au découpage au format `demands/<identifiant>-<sujet>`, par exemple `demands/DEM-022-validation-manuelle-des-tests`. Si le découpage ne précise aucun sujet, le dériver du titre confirmé de la demande. Utiliser un sujet court composé de lettres ASCII minuscules, de chiffres et de tirets. Si la demande est déjà reconstituée, vérifier et réutiliser sa branche existante, y compris si elle porte l’ancien nom.
+
+L’invocation autorise la création de `demands/<identifiant>-<sujet>` depuis le develop local vérifié, dans le dossier principal libre et propre. Les couches conservent leurs branches.
 
 Appliquer le skill `ai-development-engineering-appliquer-commits-valides` pour reprendre les seuls commits validés et leurs traces.
 
@@ -34,9 +36,11 @@ Après les cherry-picks, appliquer le skill `ai-development-engineering-material
 
 Un conflit qui change le résultat validé demande une décision humaine ; ne pas valider une différence par déduction. Aucun nouveau développement, push, PR, fusion de livraison ou étape suivante automatique. Ne pas déléguer sans demande explicite.
 
+Une fois la reconstitution terminée, lire le fichier `TEST.md` du dossier principal. Demander à l’humain d’y lancer manuellement la suite complète sur la branche reconstituée. Indiquer le chemin absolu du dossier principal, le SHA à tester, les commandes de `TEST.md`, leurs prérequis et les résultats attendus. Attendre le retour de l’humain et consigner le résultat communiqué et le SHA correspondant dans la trace de la demande. Si `TEST.md` est introuvable, signaler le blocage.
+
 ## Sortie et preuve
 
-**Résultat attendu :** Branche dédiée reconstituée, SHA sources et obtenus, contrôles et limites dans la trace de la demande, prête pour l’étape 06 Livraison.
+**Résultat attendu :** Branche dédiée reconstituée, SHA sources et obtenus, contrôles et limites dans la trace de la demande.
 
 ## Arrêt
 
@@ -44,4 +48,4 @@ Un conflit qui change le résultat validé demande une décision humaine ; ne pa
 
 ## Prochaine étape
 
-Une fois la demande reconstituée et vérifiée, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-consolidation`, sur instruction explicite et sans enchaînement automatique.
+Après confirmation humaine de la réussite de la suite complète sur le SHA final reconstitué, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-consolidation`, sur instruction explicite et sans enchaînement automatique.

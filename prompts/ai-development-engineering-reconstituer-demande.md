@@ -32,7 +32,9 @@ Une reprise de la même demande conserve ses changements identifiés après vér
 
 Ne créer ni nouveau worktree, copie ou dossier de réunion. Les worktrees de couche restent sur layers/*.
 
-Dans le principal, créer `demands/<identifiant>` depuis le develop local explicitement vérifié : `git switch -c demands/<identifiant> develop`. Ne pas modifier directement develop ou production.
+Pour une nouvelle reconstitution, reprendre le nom fixé au découpage au format `demands/<identifiant>-<sujet>`, par exemple `demands/DEM-022-validation-manuelle-des-tests`. Si le découpage ne précise aucun sujet, le dériver du titre confirmé de la demande. Utiliser un sujet court composé de lettres ASCII minuscules, de chiffres et de tirets. Si la demande est déjà reconstituée, vérifier et réutiliser sa branche existante, y compris si elle porte l’ancien nom.
+
+Dans le principal, créer `demands/<identifiant>-<sujet>` depuis le develop local explicitement vérifié. Par exemple, `git switch -c demands/DEM-022-validation-manuelle-des-tests develop`. Ne pas modifier directement develop ou production.
 
 Une branche existante n’est pas déplacée : vérifier sa provenance et reprendre seulement la même demande. Noter develop comme branche à retrouver dans le principal après fusion distante.
 
@@ -48,6 +50,8 @@ L’invocation autorise la création de branche et les cherry-picks du périmèt
 
 Aucune délégation, push, PR, fusion de livraison ou étape suivante automatique.
 
+Une fois la reconstitution terminée, lire le fichier `TEST.md` du dossier principal. Demander à l’humain d’y lancer manuellement la suite complète sur la branche reconstituée. Indiquer le chemin absolu du dossier principal, le SHA à tester, les commandes de `TEST.md`, leurs prérequis et les résultats attendus. Attendre le retour de l’humain et consigner le résultat communiqué et le SHA correspondant dans la trace de la demande. Si `TEST.md` est introuvable, signaler le blocage.
+
 ## Sortie et preuve
 
 **Résultat attendu :** Branche dédiée reconstituée, correspondance des SHA sources et obtenus, diff et contrôles, limites éventuelles consignés dans la demande ou les cartes.
@@ -58,4 +62,4 @@ Aucune délégation, push, PR, fusion de livraison ou étape suivante automatiqu
 
 ## Prochaine étape
 
-Une fois la demande reconstituée et vérifiée, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-demande`, sur instruction explicite et sans enchaînement automatique.
+Après confirmation humaine de la réussite de la suite complète sur le SHA final reconstitué, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-demande`, sur instruction explicite et sans enchaînement automatique.
