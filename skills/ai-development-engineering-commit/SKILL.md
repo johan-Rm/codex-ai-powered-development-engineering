@@ -9,7 +9,7 @@ Lire d’abord les règles de rédaction et de contrôles du `AGENTS.md` applica
 
 Identifier les fichiers et modifications de la tâche, puis indexer uniquement le contenu autorisé. Relire le diff indexé avant de committer. Ne pas effectuer de push, amend ou réécriture d’historique sans autorisation distincte.
 
-Dans Showcase Immobilier, les règles contrôlées imposent le titre `type(CARTE-NNN): résultat` et, pour une carte, une ligne `Demande : DEM-NNN` dans le corps, séparé du titre par une ligne vide. Le scope `DEM-NNN` est réservé aux commits `docs` portant uniquement sur les traces documentaires de demande et de cartes. Le titre doit décrire le résultat sans point final ni formulation provisoire. Appliquer les types et préfixes réellement autorisés par le vérificateur du projet ; ne pas généraliser ces identifiants aux autres dépôts.
+Déterminer le format du message, les identifiants de traçabilité et les éventuelles restrictions de scope à partir des conventions du dépôt et de ses contrôles. Rédiger un titre qui exprime le résultat concret du changement.
 
 Utiliser le vérificateur du projet pour le message et, lorsque nécessaire, la plage de commits avec une base explicite ; un contrôle du seul message ne vérifie ni les fichiers ni les références. La validation d’une contribution repose sur le vérificateur extrait de la base d’intégration, pas sur celui modifié par la contribution.
 

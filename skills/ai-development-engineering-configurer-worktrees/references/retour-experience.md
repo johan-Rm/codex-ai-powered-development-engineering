@@ -58,9 +58,9 @@ rejouées pendant cet audit documentaire.
 4. **Identité spécifique au projet.** Les noms `gd-<couche>` isolent les couches de ce dépôt, mais
    deux clones/configurations utilisant les mêmes noms sur le même moteur Docker peuvent entrer
    en collision. Une généralisation demande une identité de projet explicite.
-5. **Lint lié à une cible.** `eslint.config.mjs` importe `.nuxt-graines-digitales/eslint.config.mjs`.
-   Pour la PR design, préparer uniquement `demo` ne suffisait pas. La génération des types par
-   cible ne résout pas à elle seule ce couplage de la configuration ESLint.
+5. **Lint lié à une cible.** Une configuration ESLint qui importe un fichier généré pour une
+   cible précise dépend de la préparation de cette cible. Préparer uniquement une autre cible
+   laisse cet import non résolu, même si ses types ont bien été générés.
 6. **Consignes design contradictoires.** Le profil Claude historique interdit presque tout usage
    du terminal, alors que le README de design intégré autorise les maquettes HTML/CSS et leur
    consultation. L’autorisation utilisateur avait permis DS-001 ; les documents restent à harmoniser.
