@@ -40,7 +40,7 @@ Inventorier avant livraison les worktrees, les missions, les modifications et le
 
 Dans AIDE, lire les règles d’intégration et de suivi communes dans `docs/architecture/03-developpement-loop/06-livraison.md` et les autorisations `AGENTS.md`. Pour la consolidation, lire aussi sa page de livraison.
 
-Ces références fixent les préconditions du réalignement après réécriture des SHA, sans les dupliquer. Respecter les limites explicites de l’utilisateur, notamment une demande limitée à la PR.
+Ces références fixent les préconditions du réalignement après intégration du commit unique, sans les dupliquer. Respecter les limites explicites de l’utilisateur, notamment une demande limitée à la PR.
 
 ### Contrôles et PR
 
@@ -56,7 +56,7 @@ Une fois les contrôles requis réussis sur le HEAD final, appliquer le skill `a
 
 ### Intégration et suivi
 
-L’humain vérifie les résultats des contrôles CI/CD de la PR et déclenche les éventuels contrôles manuels requis. Il effectue lui-même le **Rebase and merge** vers `develop` une fois les contrôles et protections satisfaits. L’agent transmet l’URL de la PR et attend la fusion humaine avant de reprendre le suivi. Une instruction limitée à la PR arrête la livraison à son ouverture.
+L’humain vérifie les résultats des contrôles CI/CD de la PR et déclenche les éventuels contrôles manuels requis. Une fois les contrôles et protections satisfaits, il effectue lui-même le **Squash and merge** vers `develop` avec le message de commit préparé à la reconstitution. L’agent vérifie que la PR couvre une seule demande et transmet le message final avec le lien de la PR. L’agent attend la fusion humaine avant de reprendre le suivi. Une instruction limitée à la PR arrête la livraison à son ouverture.
 
 Après intégration distante vérifiée, appliquer le skill `ai-development-engineering-suivre-integration` pour le suivi local autorisé et la traçabilité de la livraison. Ne pas annoncer la clôture si une couche reste non alignée.
 

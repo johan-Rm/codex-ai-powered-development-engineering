@@ -46,6 +46,8 @@ Une fois la reconstitution terminée, lire le fichier `TEST.md` du dossier princ
 
 **Situation bloquante :** Carte non validée, commit manquant, dossier sale ou occupé, branche étrangère ou conflit hors du résultat validé : préserver le travail et exposer le blocage.
 
+Préparer le titre et le corps du commit unique attendu dans `develop` selon la [référence Git AIDE](../skills/references/git-workflow.md#intégration-et-suivi). Conserver les commits de cartes sur la branche reconstituée pour les contrôles et la traçabilité.
+
 ## Prochaine étape
 
 Après confirmation humaine de la réussite de la suite complète sur le SHA final reconstitué, l’étape **06 Livraison** peut être engagée avec le prompt `ai-development-engineering-livrer-consolidation`, sur instruction explicite et sans enchaînement automatique.
