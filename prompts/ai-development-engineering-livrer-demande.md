@@ -1,5 +1,5 @@
 ---
-description: "Livrer une demande de développement : contrôles, push, PR, fusion et suivi après fusion selon les autorisations du projet."
+description: "Livrer une demande de développement avec contrôles CI/CD et fusion effectués par l’humain, puis suivi local par l’agent."
 ---
 
 # Développement · 06 Livraison
@@ -22,7 +22,7 @@ Lire les instructions du projet, la demande ou carte fournie et les README appli
 
 Avant une écriture, confirmer le worktree absolu, la branche autorisée et la disponibilité de la couche. Préserver les modifications préexistantes et les `.env`. Ne pas utiliser stash, reset --hard, force-push ou suppression de worktree pour résoudre une situation.
 
-Ne pas rebaser une branche occupée. L’invocation demande la livraison complète : contrôles, commits documentaires nécessaires, vérification distante, push sans forcer, PR vers develop, fusion, alignement et suppression des seules branches temporaires livrées.
+Ne pas rebaser une branche occupée. L’invocation autorise les commits documentaires nécessaires, la vérification distante, le push sans forcer, l’ouverture de la PR vers `develop` et le suivi local après fusion.
 
 Ne pas demander de confirmations intermédiaires pour les opérations autorisées par le projet. Dans AIDE, les nouvelles branches finales demands/* utilisent le dossier principal du dépôt ; les worktrees de couche restent sur layers/*.
 
@@ -44,17 +44,19 @@ Ces références fixent les préconditions du réalignement après réécriture 
 
 ### Contrôles et PR
 
-Faire réaliser les contrôles requis sur la branche reconstituée selon la règle commune et attendre leurs résultats. Une preuve déjà lue portant sur le même HEAD, les mêmes commandes et le même environnement peut éviter une répétition identique.
+Pour les seules traces documentaires nécessaires et autorisées, appliquer le skill `ai-development-engineering-commit` avant les tests sur le HEAD final.
+
+L’humain exécute les tests CI/CD préalables à l’ouverture de la PR sur le HEAD final à livrer. L’agent indique les commandes, le répertoire, les prérequis et les résultats attendus, puis vérifie les résultats transmis. Une preuve existante reste valable pour le même HEAD, les mêmes commandes et le même environnement.
 
 Aucun contrôle inconnu ou échoué ne vaut réussite. Ne pas affaiblir une règle, un seuil ou une exception pour livrer ; une correction fonctionnelle retourne à la validation humaine.
 
 Les nouveaux contrôles de consolidation disposent d’une commande stable et de cas conformes, écarts et exceptions testés.
 
-Pour les seules traces documentaires nécessaires et autorisées, appliquer le skill `ai-development-engineering-commit`. Appliquer ensuite le skill `ai-development-engineering-creer-pr` pour préparer et ouvrir la PR autorisée, après réussite des contrôles requis.
+Une fois les contrôles requis réussis sur le HEAD final, appliquer le skill `ai-development-engineering-creer-pr` pour préparer et ouvrir la PR autorisée.
 
 ### Intégration et suivi
 
-Si la fusion est autorisée et que les contrôles et protections sont satisfaits, appliquer le skill `ai-development-engineering-fusionner-pr`. Une instruction limitée à la PR arrête la livraison à cette étape.
+L’humain vérifie les résultats des contrôles CI/CD de la PR et déclenche les éventuels contrôles manuels requis. Il effectue lui-même le **Rebase and merge** vers `develop` une fois les contrôles et protections satisfaits. L’agent transmet l’URL de la PR et attend la fusion humaine avant de reprendre le suivi. Une instruction limitée à la PR arrête la livraison à son ouverture.
 
 Après intégration distante vérifiée, appliquer le skill `ai-development-engineering-suivre-integration` pour le suivi local autorisé et la traçabilité de la livraison. Ne pas annoncer la clôture si une couche reste non alignée.
 

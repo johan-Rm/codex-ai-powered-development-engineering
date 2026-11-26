@@ -37,7 +37,7 @@ La documentation source décrit des commandes de contrôle propres à son projet
 
 ## Intégration et suivi
 
-L’intégration AIDE utilise **Rebase and merge** vers `develop`, sans squash ni commit de fusion. Vérifier la méthode, les protections, les contrôles, le HEAD et la cible ; si la méthode est indisponible, signaler le blocage. Une demande limitée à la PR n’autorise pas sa fusion. Une correction fonctionnelle nécessite une nouvelle validation.
+Pour l’étape 06 de livraison de développement ou de consolidation, les autorisations du `AGENTS.md` réservent les tests CI/CD préalables et la fusion à l’humain. L’intégration AIDE utilise **Rebase and merge** vers `develop`, sans squash ni commit de fusion. Vérifier la méthode, les protections, les contrôles, le HEAD et la cible ; si la méthode est indisponible, signaler le blocage. Une demande limitée à la PR n’autorise pas sa fusion. Une correction fonctionnelle nécessite une nouvelle validation.
 
 Après fusion, vérifier l’état intégré, le SHA résultant et sa présence dans `develop` distant ; tracer la correspondance des commits réécrits. Une équivalence de patch seule ne prouve pas l’intégration. Actualiser ensuite `develop` et les seules couches libres, propres et sans travail inédit, selon les autorisations du projet. Un rebase local sans commit à rejouer est limité aux cas explicitement autorisés après preuve d’intégration et de provenance. Préserver les branches occupées, les worktrees, les données et les `.env` ; ne pas utiliser stash, reset destructif ou force-push pour obtenir l’alignement.
 
