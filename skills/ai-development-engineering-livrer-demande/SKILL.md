@@ -71,4 +71,4 @@ Après intégration distante vérifiée, appliquer le skill `ai-development-engi
 
 ## Fin de la boucle
 
-La livraison termine la boucle lorsque ses conditions de clôture sont satisfaites. Une livraison limitée à la PR ou un suivi bloqué reste à poursuivre ; ne pas annoncer la boucle terminée prématurément.
+La livraison est achevée lorsque l’intégration et le suivi requis sont vérifiés. Une livraison limitée à la PR ou un suivi requis bloqué reste à poursuivre. La clôture des espaces est distincte et peut être différée : indiquer les espaces conservés et leurs éventuels blocages, sans considérer leur conservation comme un échec de livraison.

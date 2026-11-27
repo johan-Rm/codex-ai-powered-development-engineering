@@ -49,7 +49,9 @@ Chaque demande de développement ou de consolidation ajoute un seul commit à `d
 
 Après fusion, vérifier le message et le SHA intégrés distants et rapprocher le HEAD contrôlé de la PR et son diff cumulé du commit intégré ; tracer ce lien avec les SHA des cartes. Signaler toute divergence du message : ce contrôle intervient après la fusion. Une équivalence de patch seule ne prouve pas l’intégration. Actualiser `develop` uniquement si son checkout est libre, propre et si l’opération est autorisée. Préserver les autres worktrees, les données et les `.env`.
 
-Ne pas supprimer automatiquement le worktree ou la branche de demande. La promotion vers `master` exige une demande distincte ; une PR intégrée ne prouve pas un déploiement.
+L’intégration vérifiée et la clôture des espaces sont distinctes : le worktree, la branche et les ressources d’une demande fusionnée peuvent être conservés temporairement. La livraison ne les supprime pas automatiquement. Sur demande, inventorier les demandes fusionnées et les espaces conservés, leurs activités, données, ressources, preuves et blocages ; un arbre propre ne démontre pas leur disponibilité.
+
+Une clôture ciblée nécessite une autorisation explicite applicable. Avant chaque suppression, vérifier la fusion et le rattachement du travail au squash, l’absence de travail inédit et d’activité, et identifier les données et ressources à préserver ou à retirer, notamment celles qui sont partagées. Un élément incertain ou occupé reste conservé et son blocage est signalé. Préserver les anciens worktrees de couche pendant la transition. La promotion vers `master` exige une demande distincte ; une PR intégrée ne prouve pas un déploiement.
 
 ## Versions et releases
 
