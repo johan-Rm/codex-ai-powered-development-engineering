@@ -1,14 +1,14 @@
 ---
 name: ai-development-engineering-integrer-dependances
-description: Intégrer les seuls commits nécessaires à une dépendance AIDE dans une couche affectée et disponible.
+description: Vérifier les commits nécessaires à une dépendance AIDE sur la branche de demande.
 ---
 
 # Intégrer les commits d’une dépendance
 
-Respecter les instructions et autorisations du projet et de l’étape appelante ; ce skill n’autorise pas d’opération Git supplémentaire. Identifier la carte consommatrice, les commits nécessaires et leur provenance. Vérifier leur contenu, leur ordre et leur présence éventuelle dans la couche destinataire avant toute intégration.
+Respecter les instructions et autorisations du projet et de l’étape appelante ; ce skill n’autorise pas d’opération Git supplémentaire. Identifier la carte consommatrice, les commits nécessaires et leur provenance. Vérifier leur contenu, leur ordre et leur présence sur la branche de la demande.
 
-Vérifier le chemin absolu, la branche, l’index, `git status --porcelain=v1 --untracked-files=all` et les missions actives. La couche destinataire doit être affectée, libre et propre ; un arbre propre seul ne prouve pas sa disponibilité. Si elle porte du travail de la même demande, attendre que ses tâches terminées soient isolées et commitées avant toute intégration. Une couche occupée ou sale reste intacte ; signaler le blocage et poursuivre les tâches indépendantes.
+Vérifier le chemin absolu du worktree de la demande, sa branche, son index, `git status --porcelain=v1 --untracked-files=all` et les missions actives. Un worktree occupé par une autre mission ou portant du travail étranger reste intact ; signaler le blocage. Un arbre propre seul ne prouve pas sa disponibilité. Une reprise conserve les seuls changements identifiés de la demande.
 
-Intégrer uniquement les commits identifiés et autorisés. Utiliser une avance rapide si elle ne comprend que les contributions nécessaires ; sinon appliquer un cherry-pick ciblé en conservant la provenance. Ne pas intégrer une branche entière sans en vérifier le contenu, copier des changements non commités, déplacer une mission ou réécrire une branche partagée. Préserver les données, `.env` et worktrees ; aucun stash, reset destructif ou force-push.
+Dans le workflow à worktree unique, poursuivre lorsque les commits requis sont présents ; sinon signaler la dépendance manquante. Ne pas effectuer de cherry-pick ou d’autre intégration par défaut. Pour une demande ancienne ou une dépendance externe, toute opération Git exige une autorisation applicable et la vérification de sa provenance et de son périmètre. Ne pas copier des changements non commités, déplacer une mission ou réécrire une branche partagée. Préserver les données, `.env` et worktrees ; aucun stash, reset destructif ou force-push.
 
-Vérifier le résultat et consigner la correspondance entre commits sources et obtenus, ainsi que les conflits et limites. Un conflit qui modifierait un résultat déjà validé nécessite une décision humaine ; ne pas inventer de validation. Restituer la branche et les SHA réels.
+Consigner les commits vérifiés et les limites ; en cas d’intégration autorisée, relever les SHA sources et obtenus ainsi que les conflits. Un conflit qui modifierait un résultat déjà validé nécessite une décision humaine ; ne pas inventer de validation. Restituer la branche et les SHA réels.

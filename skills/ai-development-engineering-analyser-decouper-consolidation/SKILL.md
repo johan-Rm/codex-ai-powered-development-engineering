@@ -1,4 +1,5 @@
 ---
+name: ai-development-engineering-analyser-decouper-consolidation
 description: "Analyser une convention dans toute la base, confirmer les décisions nécessaires et préparer toutes les cartes de consolidation."
 ---
 
@@ -20,7 +21,7 @@ Proposition de convention et périmètre à analyser ; aucun livrable de dévelo
 
 Lire les instructions du projet, la demande ou carte fournie et les README applicables. Résoudre les chemins, couches, branches, commandes de tests et qualité depuis le projet ; annoncer les valeurs utilisées et les inconnues, sans imposer de valeurs personnelles.
 
-Avant une écriture, confirmer le worktree absolu, la branche autorisée et la disponibilité de la couche. Préserver les modifications préexistantes et les `.env`. Ne pas utiliser stash, reset --hard, force-push ou suppression de worktree pour résoudre une situation.
+Avant une écriture, confirmer le worktree absolu, la branche autorisée et la disponibilité du worktree de la demande. Préserver les modifications préexistantes et les `.env`. Ne pas utiliser stash, reset --hard, force-push ou suppression de worktree pour résoudre une situation.
 
 Ne pas rebaser une branche occupée. Commit, push, PR et merge nécessitent l’autorisation prévue par le projet ; une invocation d’étape ne les autorise pas implicitement. Les autorisations explicites déjà données restent valables.
 
@@ -42,7 +43,9 @@ Présenter les options, leurs coûts, corrections, exceptions et contrôles prop
 
 Une décision déjà explicite reste acquise. **Le silence ne vaut pas accord.** Sans décision suffisante, conserver la proposition en attente, sans code ni contrôle modifié.
 
-Appliquer le skill `ai-development-engineering-preparer-cartes` pour préparer toutes les cartes, leur matrice, les dépendances et les branches des couches affectées selon les autorisations du projet. Ne pas implémenter, committer, pousser ni appeler l’étape suivante.
+Créer ou reprendre dès cette étape le worktree unique de la demande et sa branche `demands/<identifiant>-<sujet>` depuis `develop` local vérifié ; si le worktree ou la branche existe déjà, vérifier son identité et reprendre la même demande sans la recréer ni la déplacer. Vérifier leur disponibilité et préserver tout travail existant. La création du worktree et de sa branche est autorisée par cette étape. Préparer les cartes dans ce worktree, en respectant les conventions du projet.
+
+Appliquer le skill `ai-development-engineering-materialiser-demande` pour créer le document de demande depuis le brouillon confirmé, puis `ai-development-engineering-preparer-cartes` pour préparer les cartes, leur matrice et leurs dépendances. Les couches identifient les responsabilités techniques, sans affectation à des worktrees de couche. Ne pas implémenter, committer, pousser ni appeler l’étape suivante.
 
 ## Sortie et preuve
 
@@ -54,4 +57,4 @@ Appliquer le skill `ai-development-engineering-preparer-cartes` pour préparer t
 
 ## Prochaine étape
 
-Une fois l’analyse et les cartes prêtes, l’étape **03 Implémentation** peut être engagée avec le prompt `ai-development-engineering-implementer-consolidation`, sur instruction explicite et sans enchaînement automatique.
+Une fois l’analyse et les cartes prêtes, l’étape **03 Implémentation** peut être engagée avec le skill `ai-development-engineering-implementer-consolidation`, sur instruction explicite et sans enchaînement automatique.

@@ -5,9 +5,9 @@ Cette documentation rassemble les informations de `docs/git-workflow/` du projet
 ## Branches et contributions
 
 - `develop` rassemble les contributions intégrées ; `master` représente la production ; `main` est historique.
-- Les branches durables `layers/<couche>` correspondent aux worktrees `worktree/<couche>`. Une seule mission écrit dans une couche ; un arbre propre ne suffit pas à prouver sa disponibilité.
-- Une demande est reconstituée dans le dossier principal sur `demands/<identifiant>`, depuis `develop` vérifié. Les commits validés sont repris par cherry-pick avec leur provenance, dans l’ordre des dépendances, sans copier du travail non commité ni fusionner les branches de couche. Un conflit qui modifie le résultat validé nécessite une décision humaine.
-- La documentation source indique encore que les commits sont créés après validation humaine. Les consignes AIDE actuelles prévoient un commit local par tâche à l’implémentation, puis une vérification humaine : cette divergence reste à corriger dans la source.
+- Chaque demande utilise dès l’analyse un worktree dédié et une branche `demands/<identifiant>-<sujet>` issue de `develop` local vérifié. Les tâches restent typées par couche technique, sans worktree de couche associé.
+- Les tâches sont réalisées et commitées sur cette branche selon leurs dépendances ; en consolidation, chaque changement est soumis au verdict humain avant son commit ; en développement, la vérification humaine intervient après les commits de tâches. Le worktree et sa branche sont réutilisés pour une reprise de la même demande ; un arbre propre ne prouve pas sa disponibilité.
+- Les guides du projet source peuvent encore décrire l’ancien modèle : vérifier leur état et signaler les divergences jusqu’à leur alignement.
 
 ## Messages de commit
 
@@ -27,7 +27,7 @@ Demande : DEM-024
 
 ## Pull requests et contrôles
 
-Une PR présente la demande reconstituée vers `develop`. Son titre exprime en français le résultat global et se termine par `(DEM-NNN)` ; aucun préfixe Conventional Commit n’est imposé. Son corps expose le problème, le résultat, les vérifications et leurs limites.
+Une PR présente la demande validée vers `develop`. Son titre exprime en français le résultat global et se termine par `(DEM-NNN)` ; aucun préfixe Conventional Commit n’est imposé. Son corps expose le problème, le résultat, les vérifications et leurs limites.
 
 Avant ouverture, vérifier les verdicts, les commits et les contrôles de toute la contribution par rapport à la base d’intégration vérifiée. Les messages et références sont examinés sur toute la plage, sans contrôle rétroactif hors plage ; les commits de fusion sont refusés. Une erreur obligatoire bloque la contribution. Une réussite technique ne remplace pas la revue humaine ; un contrôle inconnu ne vaut pas réussite.
 
@@ -37,13 +37,13 @@ La documentation source décrit des commandes de contrôle propres à son projet
 
 ## Intégration et suivi
 
-Chaque demande de développement ou de consolidation ajoute un seul commit à `develop`. À la reconstitution, préparer son message en français. Le titre commence par un verbe à l’infinitif, indique le résultat concret ou le problème résolu et se termine par `(DEM-NNN)`. Le corps précise le besoin et le résultat apporté, avec un lien vers la demande qui conserve la provenance des commits de cartes. Exemple de titre : Réserver les tests et la fusion de livraison à l’humain (DEM-NNN).
+Chaque demande de développement ou de consolidation ajoute un seul commit à `develop`. À la livraison, préparer son message en français. Le titre commence par un verbe à l’infinitif, indique le résultat concret ou le problème résolu et se termine par `(DEM-NNN)`. Le corps précise le besoin et le résultat apporté, avec un lien vers la demande qui conserve la provenance des commits de cartes. Exemple de titre : Réserver les tests et la fusion de livraison à l’humain (DEM-NNN).
 
 À la livraison, l’humain exécute les tests CI/CD préalables puis effectue le **Squash and merge** de la PR vers `develop`, avec le message préparé, après réussite des contrôles et satisfaction des protections. Si le squash est indisponible, signaler le blocage. Une demande limitée à la PR s’arrête à son ouverture. Une correction fonctionnelle nécessite une nouvelle validation.
 
-Après fusion, vérifier l’état intégré, le SHA résultant et sa présence dans `develop` distant ; rapprocher le HEAD contrôlé de la PR et son diff cumulé du commit intégré, puis tracer ce lien avec les SHA des cartes dans la demande. Une équivalence de patch seule ne prouve pas l’intégration. Actualiser ensuite `develop` et les seules couches libres, propres et sans travail inédit, selon les autorisations du projet. Un rebase local sans commit à rejouer est limité aux cas explicitement autorisés après preuve d’intégration et de provenance. Préserver les branches occupées, les worktrees, les données et les `.env` ; ne pas utiliser stash, reset destructif ou force-push pour obtenir l’alignement.
+Après fusion, vérifier le SHA intégré distant et rapprocher le HEAD contrôlé de la PR et son diff cumulé du commit intégré ; tracer ce lien avec les SHA des cartes. Une équivalence de patch seule ne prouve pas l’intégration. Actualiser `develop` uniquement si son checkout est libre, propre et si l’opération est autorisée. Préserver les autres worktrees, les données et les `.env`.
 
-Vérifier l’égalité des SHA avant clôture et ne supprimer que les branches temporaires livrées dont l’intégration et l’absence d’autre travail sont établies. Une couche sale ou occupée bloque la clôture. La promotion vers `master` exige une demande distincte ; une PR intégrée ne prouve pas un déploiement.
+Ne pas supprimer automatiquement le worktree ou la branche de demande. La promotion vers `master` exige une demande distincte ; une PR intégrée ne prouve pas un déploiement.
 
 ## Versions et releases
 

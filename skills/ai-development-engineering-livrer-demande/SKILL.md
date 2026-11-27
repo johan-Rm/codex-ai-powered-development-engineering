@@ -1,8 +1,9 @@
 ---
+name: ai-development-engineering-livrer-demande
 description: "Livrer une demande de développement avec contrôles CI/CD et fusion effectués par l’humain, puis suivi local par l’agent."
 ---
 
-# Développement · 06 Livraison
+# Développement · 05 Livraison
 
 ## Consignes impératives
 
@@ -20,13 +21,11 @@ Branche réunissant tous les commits de tâches validées et documentation à jo
 
 Lire les instructions du projet, la demande ou carte fournie et les README applicables. Résoudre les chemins, couches, branches, commandes de tests et qualité depuis le projet ; annoncer les valeurs utilisées et les inconnues, sans imposer de valeurs personnelles.
 
-Avant une écriture, confirmer le worktree absolu, la branche autorisée et la disponibilité de la couche. Préserver les modifications préexistantes et les `.env`. Ne pas utiliser stash, reset --hard, force-push ou suppression de worktree pour résoudre une situation.
+Avant une écriture, confirmer le worktree absolu, la branche autorisée et la disponibilité du worktree de la demande. Préserver les modifications préexistantes et les `.env`. Ne pas utiliser stash, reset --hard, force-push ou suppression de worktree pour résoudre une situation.
 
 Ne pas rebaser une branche occupée. L’invocation autorise les commits documentaires nécessaires, la vérification distante, le push sans forcer, l’ouverture de la PR vers `develop` et le suivi local après fusion.
 
-Ne pas demander de confirmations intermédiaires pour les opérations autorisées par le projet. Dans AIDE, les nouvelles branches finales demands/* utilisent le dossier principal du dépôt ; les worktrees de couche restent sur layers/*.
-
-Ne pas déplacer une demande ancienne déjà reconstituée dans une couche sans instruction explicite : reprendre son emplacement et sa branche de retour consignés. Aucune copie de réunion ni archivage à organiser. Préserver les worktrees, tmp/, .env, données et fichiers locaux.
+Préserver le worktree de la demande, les autres missions, les données et les fichiers locaux.
 
 Respecter une demande explicitement plus limitée, les protections distantes et les contrôles. Si le projet contredit ce périmètre, tenir compte des instructions explicites déjà accordées dans la session ; sinon signaler la contradiction sans contourner les règles.
 
@@ -34,17 +33,19 @@ L’alignement durable d’AGENTS.md et des guides reste à traiter lorsqu’une
 
 ## Procédure
 
-Vérifier que l’étape 05 a réuni tous les commits validés sur une branche de demande. Ne pas refaire la reconstitution ni la remplacer par des merges de branches de couche. Contrôler la complétude, les verdicts, les SHA et le diff cumulé.
+Vérifier que tous les commits et verdicts attendus sont présents sur la branche unique de la demande ; contrôler la complétude, les SHA et le diff cumulé.
 
-Inventorier avant livraison les worktrees, les missions, les modifications et les divergences locales. **Un arbre propre ne prouve pas la disponibilité** d’une couche.
+Inventorier avant livraison les worktrees, les missions, les modifications et les divergences locales. **Un arbre propre ne prouve pas la disponibilité** du worktree.
 
-Dans AIDE, lire les règles d’intégration et de suivi communes dans `docs/architecture/03-developpement-loop/06-livraison.md` et les autorisations `AGENTS.md`. Pour la consolidation, lire aussi sa page de livraison.
+Lire les règles d’intégration et de suivi du projet et les autorisations `AGENTS.md`. Si elles imposent encore la reconstitution ou les couches permanentes, signaler leur divergence et respecter les instructions explicites de l’utilisateur.
 
-Ces références fixent les préconditions du réalignement après intégration du commit unique, sans les dupliquer. Respecter les limites explicites de l’utilisateur, notamment une demande limitée à la PR.
+Respecter les préconditions de suivi applicables après intégration du commit unique. Respecter les limites explicites de l’utilisateur, notamment une demande limitée à la PR.
 
 ### Contrôles et PR
 
 Pour les seules traces documentaires nécessaires et autorisées, appliquer le skill `ai-development-engineering-commit` avant les tests sur le HEAD final.
+
+Lire `TEST.md` à la racine du worktree de la demande. Indiquer à l’humain le chemin absolu, le SHA final, les commandes, prérequis et résultats attendus ; lui demander d’exécuter la suite complète et consigner son résultat et ce SHA dans une preuve locale hors HEAD testé ou dans la PR. Si `TEST.md` manque ou le résultat est absent ou échoué, bloquer la livraison. Si un nouveau commit est nécessaire après les tests, refaire les contrôles requis sur le nouveau HEAD ; ne pas modifier le HEAD testé pour consigner leur résultat.
 
 L’humain exécute les tests CI/CD préalables à l’ouverture de la PR sur le HEAD final à livrer. L’agent indique les commandes, le répertoire, les prérequis et les résultats attendus, puis vérifie les résultats transmis. Une preuve existante reste valable pour le même HEAD, les mêmes commandes et le même environnement.
 
@@ -56,13 +57,13 @@ Une fois les contrôles requis réussis sur le HEAD final, appliquer le skill `a
 
 ### Intégration et suivi
 
-L’humain vérifie les résultats des contrôles CI/CD de la PR et déclenche les éventuels contrôles manuels requis. Une fois les contrôles et protections satisfaits, il effectue lui-même le **Squash and merge** vers `develop` avec le message de commit préparé à la reconstitution. L’agent vérifie que la PR couvre une seule demande et transmet le message final avec le lien de la PR. L’agent attend la fusion humaine avant de reprendre le suivi. Une instruction limitée à la PR arrête la livraison à son ouverture.
+L’humain vérifie les résultats des contrôles CI/CD de la PR et déclenche les éventuels contrôles manuels requis. Une fois les contrôles et protections satisfaits, il effectue lui-même le **Squash and merge** vers `develop` avec le message de commit préparé pour la livraison. L’agent vérifie que la PR couvre une seule demande et transmet le message final avec le lien de la PR. L’agent attend la fusion humaine avant de reprendre le suivi. Une instruction limitée à la PR arrête la livraison à son ouverture.
 
-Après intégration distante vérifiée, appliquer le skill `ai-development-engineering-suivre-integration` pour le suivi local autorisé et la traçabilité de la livraison. Ne pas annoncer la clôture si une couche reste non alignée.
+Après intégration distante vérifiée, appliquer le skill `ai-development-engineering-suivre-integration` pour le suivi local autorisé et la traçabilité de la livraison.
 
 ## Sortie et preuve
 
-**Résultat attendu :** Dossier de livraison contrôlé, URL réelle de PR, SHA de fusion et tableau des SHA de develop et de toutes les couches alignées après suivi ; en cas de blocage, stade atteint, éléments prêts et cause précise. Ne pas annoncer une opération non exécutée.
+**Résultat attendu :** Dossier de livraison contrôlé, URL réelle de PR, SHA de fusion et état de develop après suivi ; en cas de blocage, stade atteint, éléments prêts et cause précise. Ne pas annoncer une opération non exécutée.
 
 ## Arrêt
 

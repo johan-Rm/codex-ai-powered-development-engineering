@@ -1,4 +1,5 @@
 ---
+name: ai-development-engineering-verifier-arbitrer-demande
 description: "Accompagner la vérification humaine d’une demande entièrement implémentée et commitée, puis tracer les verdicts sans recréer les commits de tâches."
 ---
 
@@ -26,7 +27,7 @@ Les commits de tâches sont déjà créés à l’implémentation ; ils ne const
 
 ## Procédure
 
-Dans AIDE, lire le brouillon `tmp/demande-<sujet>.md` du principal et les cartes de `dev-book/tasks/` dans leurs couches. Ne pas créer la demande définitive ni demands/*.
+Lire la demande, les cartes et les commits dans le worktree unique. Examiner pour chaque tâche son objectif, le résultat obtenu et les éventuelles dérives du code ou du périmètre. La validation humaine intervient après l’ensemble des commits présentés.
 
 Présenter la couverture de la demande complète, les comportements observables, les critères, preuves, commandes et limites, associés aux SHA réellement implémentés. Vérifier que le contenu présenté correspond toujours à ces commits et relever tout diff supplémentaire.
 
@@ -42,7 +43,7 @@ Une correction retourne à l’implémentation, puis à une nouvelle vérificati
 
 ## Sortie et preuve
 
-**Résultat attendu :** Verdict explicite de la demande, associé aux cartes et commits présentés ; couverture, corrections et éventuels critères non vérifiés identifiés. Une demande acceptée reste à reconstituer et à livrer selon les autorisations de ces étapes.
+**Résultat attendu :** Verdict explicite de la demande, associé aux cartes et commits présentés ; couverture, corrections et éventuels critères non vérifiés identifiés. Une demande acceptée reste à préparer pour livraison.
 
 ## Arrêt
 
@@ -50,4 +51,4 @@ Une correction retourne à l’implémentation, puis à une nouvelle vérificati
 
 ## Prochaine étape
 
-Une fois les cartes nécessaires validées, l’étape **05 Reconstitution** peut être engagée avec le prompt `ai-development-engineering-reconstituer-demande`, sur instruction explicite et sans enchaînement automatique.
+Une fois les cartes nécessaires validées, l’étape **05 Livraison** peut être engagée avec le skill `ai-development-engineering-livrer-demande`, sur instruction explicite et sans enchaînement automatique.

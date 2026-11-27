@@ -1,4 +1,5 @@
 ---
+name: ai-development-engineering-verifier-arbitrer-consolidation
 description: "Vérifier avec l’humain une consolidation entièrement implémentée et commitée, puis tracer les verdicts sans recréer les commits de tâches."
 ---
 
@@ -26,7 +27,7 @@ Les commits de tâches sont déjà créés à l’implémentation ; ils ne const
 
 ## Procédure
 
-Lire le brouillon de consolidation identifié dans le principal et les cartes de `dev-book/tasks/` dans leurs couches. Ne pas créer la demande définitive ni demands/*.
+Lire la demande, les cartes et les verdicts donnés avant les commits dans le worktree unique de la demande. Vérifier que chaque tâche et chaque correctif requis ont été présentés et validés avant leur commit ; un verdict final ne remplace pas une validation intermédiaire absente.
 
 Présenter la couverture de la demande complète, les comportements observables, les critères, preuves, commandes et limites, associés aux SHA réellement implémentés.
 
@@ -44,7 +45,7 @@ Une correction retourne à l’implémentation, puis à une nouvelle vérificati
 
 ## Sortie et preuve
 
-**Résultat attendu :** Verdict explicite de la demande, associé aux cartes et commits présentés ; couverture, corrections et éventuels critères non vérifiés identifiés. Une demande acceptée reste à reconstituer et à livrer selon les autorisations de ces étapes.
+**Résultat attendu :** Verdict explicite de la demande, associé aux cartes et commits présentés ; couverture, corrections et éventuels critères non vérifiés identifiés. Une demande acceptée reste à préparer pour livraison.
 
 ## Arrêt
 
@@ -52,4 +53,4 @@ Une correction retourne à l’implémentation, puis à une nouvelle vérificati
 
 ## Prochaine étape
 
-Une fois les cartes nécessaires validées, l’étape **05 Reconstitution** peut être engagée avec le prompt `ai-development-engineering-reconstituer-consolidation`, sur instruction explicite et sans enchaînement automatique.
+Une fois les cartes nécessaires validées, l’étape **05 Livraison** peut être engagée avec le skill `ai-development-engineering-livrer-consolidation`, sur instruction explicite et sans enchaînement automatique.

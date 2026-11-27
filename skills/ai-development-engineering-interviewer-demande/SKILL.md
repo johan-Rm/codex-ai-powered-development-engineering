@@ -1,4 +1,5 @@
 ---
+name: ai-development-engineering-interviewer-demande
 description: "Clarifier une demande de développement avec l’humain et documenter le besoin avant son découpage."
 ---
 
@@ -73,4 +74,4 @@ En cas de **besoin contradictoire** ou de **décision nécessaire absente**, gar
 
 ## Prochaine étape
 
-Une fois le cadrage confirmé et documenté, l’étape **02 Analyse / découpage** peut être engagée avec le prompt `ai-development-engineering-analyser-decouper-demande`, sur instruction explicite et sans enchaînement automatique.
+Une fois le cadrage confirmé et documenté, l’étape **02 Analyse / découpage** peut être engagée avec le skill `ai-development-engineering-analyser-decouper-demande`, sur instruction explicite et sans enchaînement automatique.

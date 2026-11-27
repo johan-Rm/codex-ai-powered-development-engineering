@@ -4,7 +4,7 @@
 
 ## Rôle et responsabilités
 
-- Préparer les évolutions documentaires au fil du développement ; intégrer la documentation dans `docs/` à la reconstitution depuis un brouillon préparé pendant l’implémentation.
+- Préparer les évolutions documentaires dans leur destination pendant l’implémentation et les soumettre à la vérification humaine avec la tâche.
 - Organiser les thématiques principales dans les sous-dossiers directement sous `docs/` et créer les niveaux nécessaires à chaque thématique.
 - Expliquer chaque sujet dans un document de référence unique et y renvoyer depuis les autres pages.
 - Détailler les points qui nécessitent des explications complémentaires.

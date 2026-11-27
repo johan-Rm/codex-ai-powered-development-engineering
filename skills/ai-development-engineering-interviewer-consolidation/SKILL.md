@@ -1,4 +1,5 @@
 ---
+name: ai-development-engineering-interviewer-consolidation
 description: "Clarifier un constat de consolidation et documenter une proposition de convention technique à examiner."
 ---
 
@@ -62,4 +63,4 @@ En cas de **constat invérifiable** ou d’**intention ambiguë**, préciser les
 
 ## Prochaine étape
 
-Une fois le cadrage confirmé et documenté, l’étape **02 Analyse / découpage** peut être engagée avec le prompt `ai-development-engineering-analyser-decouper-consolidation`, sur instruction explicite et sans enchaînement automatique.
+Une fois le cadrage confirmé et documenté, l’étape **02 Analyse / découpage** peut être engagée avec le skill `ai-development-engineering-analyser-decouper-consolidation`, sur instruction explicite et sans enchaînement automatique.
